@@ -1,6 +1,6 @@
-# Session 2: Build a website
+# Part 2: Your website
 
-We start this in office hours on Nov 6, right after Session 1.
+[Workshop 1](README.md) · Office hours, right after [Part 1: GitHub](github.md)
 
 Put your own page on the web, for free, with **GitHub Pages**.
 Your website's address will be:
@@ -15,7 +15,7 @@ By the end you will have:
 - [ ] a live website at that address
 - [ ] a page that's really yours: your words, your colors, your projects
 
-Like session 1, everything here works in a web browser.
+Like Part 1, everything here works in a web browser.
 
 ## Part 1: Create your website repository
 
@@ -80,7 +80,7 @@ The `<style>` section at the top is **CSS**. HTML says what's on the page; CSS s
   then add `<img src="your-file-name.jpg" alt="describe the picture" width="300">` to `index.html`.
   Pick a picture that doesn't show your face, your home, or your school.
 - Add a second page: create `projects.html` and link to it from your home page with `<a href="projects.html">My projects</a>`.
-- Edit in a codespace (see [Session 1](../01-github/#option-a-github-codespaces-works-on-any-computer-including-chromebooks))
+- Edit in a codespace (see [Part 1](github.md#option-a-github-codespaces-works-on-any-computer-including-chromebooks))
   and commit from the terminal.
 
 ## Before you share your site: safety check
@@ -102,4 +102,4 @@ Your site is public. Anyone on the internet can see it.
 
 ## Next
 
-You now have a home for your work. In the coming sessions you'll add data projects to it.
+You now have a home for your work. In the coming workshops you'll add data projects to it.

@@ -1,0 +1,27 @@
+# Workshop 1: GitHub & your personal website
+
+**Fri, Nov 6, 2026 · 4–6 PM · CSUN campus** · Instructor: Hua
+
+| Time | What |
+|------|------|
+| First hour | **[Part 1: GitHub](github.md)**: make an account, create a repository, make your first commit, and clone this repository |
+| Office hours | **[Part 2: Your website](website.md)**: publish your own page at `https://YOUR-USERNAME.github.io` |
+
+Everything works in a web browser, including on Chromebooks.
+
+## Before you leave
+
+- [ ] I have a GitHub account
+- [ ] I made `my-first-repo` and committed to it
+- [ ] I cloned the club's `workshops` repository
+- [ ] My website is live at `https://YOUR-USERNAME.github.io`
+- [ ] I checked my website is safe to share (first name only, no personal details)
+
+## Files in this folder
+
+| File | What it's for |
+|------|---------------|
+| [`github.md`](github.md) | Part 1 lesson |
+| [`website.md`](website.md) | Part 2 lesson |
+| [`about-me-README.md`](about-me-README.md) | A template for your first README |
+| [`starter-site/index.html`](starter-site/index.html) | A starter page for your website |

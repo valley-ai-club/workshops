@@ -1,8 +1,8 @@
-# Session 1: GitHub
+# Part 1: GitHub
 
-**Fri, Nov 6, 2026 · 4–6 PM · CSUN campus** · Instructor: Hua
+[Workshop 1](README.md) · Fri, Nov 6, 2026 · Instructor: Hua
 
-By the end of this session you will have:
+By the end of this part you will have:
 
 - [ ] a GitHub account
 - [ ] your own repository
@@ -28,7 +28,7 @@ including Chromebooks.
 
 1. Go to [github.com/signup](https://github.com/signup).
 2. Enter your email, a password, and a **username**.
-   - Choose a username you'd be happy for a teacher or college to see. It will be part of your website address in session 2.
+   - Choose a username you'd be happy for a teacher or college to see. It will be part of your website address in Part 2.
    - Use your first name or a nickname, not your full name.
 3. Check your email for the verification code and enter it.
 4. If GitHub asks questions about how you'll use it, you can skip them.
@@ -50,7 +50,7 @@ GitHub shows it below the file list.
 
 1. Click `README.md`, then click the **pencil icon** (Edit this file).
 2. Replace what's there with an introduction to yourself. You can start from
-   [this template](exercises/about-me-README.md): open it, click **Raw**, select all, copy it
+   [this template](about-me-README.md): open it, click **Raw**, select all, copy it
    into your README, and fill in the blanks.
 3. Click **Preview** to see how it looks. `#` makes a heading and `-` makes a bullet point.
 4. Click **Commit changes…**
@@ -94,7 +94,7 @@ A codespace is a computer in the cloud that you use from your browser. Git is al
    ls workshops
    ```
 
-   You should see the session folders (`01-github`, `02-website`, …).
+   You should see the workshop folders (`01-github-and-website`, …).
 
 Personal GitHub accounts get free codespace time every month, which is plenty for this club.
 When you're done, close the tab; the codespace stops on its own.
@@ -114,7 +114,7 @@ When you're done, close the tab; the codespace stops on its own.
 
 ### Keep it up to date
 
-Before each future session, get the newest lessons:
+Before each future workshop, get the newest lessons:
 
 ```bash
 cd workshops
@@ -188,4 +188,4 @@ cd /workspaces/my-first-repo
 
 ## Next: build your website
 
-In office hours, move on to [Session 2: Build a website](../02-website/) and put your own page on the web.
+In office hours, move on to [Part 2: Your website](website.md) and put your own page on the web.
