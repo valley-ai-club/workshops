@@ -1,4 +1,4 @@
-# Part 2: Your website
+# Your website
 
 [Workshop 1](README.md) · Office hours, right after [Part 1: GitHub](github.md)
 

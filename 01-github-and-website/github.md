@@ -1,4 +1,4 @@
-# Part 1: GitHub
+# GitHub
 
 [Workshop 1](README.md) · Fri, Nov 6, 2026 · Instructor: Hua
 
@@ -188,4 +188,4 @@ cd /workspaces/my-first-repo
 
 ## Next: build your website
 
-In office hours, move on to [Part 2: Your website](website.md) and put your own page on the web.
+In office hours, move on to [Part 3: Your website](website.md) and put your own page on the web.
