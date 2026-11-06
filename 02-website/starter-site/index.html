@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✏️ The text that shows on the browser tab -->
+  <title>Alex's Page</title>
+
+  <style>
+    /* 🎨 Change these colors to make the site yours.
+       Try one of these pairs, or pick your own at htmlcolorcodes.com:
+         --accent: #2b9fd8;  --accent-soft: #e3f3fb;   (sky blue)
+         --accent: #e8812a;  --accent-soft: #fdf0e3;   (orange)
+         --accent: #2f9e6e;  --accent-soft: #e2f4ec;   (green)
+         --accent: #7a5af5;  --accent-soft: #eee9fe;   (purple)
+    */
+    :root {
+      --accent: #2b9fd8;
+      --accent-soft: #e3f3fb;
+      --text: #1f2d3a;
+      --muted: #5f6f7c;
+      --background: #fffdf8;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .avatar {
+      font-size: 64px;
+      width: 112px;
+      height: 112px;
+      line-height: 112px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin: 0;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin: 8px 0 0;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: 6px;
+      margin-top: 36px;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .card {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 12px 0;
+    }
+
+    .card h3 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 56px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <header>
+      <!-- ✏️ Pick an emoji that represents you -->
+      <div class="avatar">🚀</div>
+
+      <!-- ✏️ Your first name or a nickname (not your full name) -->
+      <h1>Hi, I'm Alex</h1>
+
+      <!-- ✏️ One sentence about you -->
+      <p class="tagline">Student, builder, and data explorer in the San Fernando Valley.</p>
+    </header>
+
+    <section>
+      <h2>About me</h2>
+      <!-- ✏️ Write 2–3 sentences. What do you like? What are you curious about? -->
+      <p>
+        I'm learning AI and data science with the Valley AI Club. Outside of school
+        I like basketball, drawing, and figuring out how things work.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I'm learning</h2>
+      <!-- ✏️ Each <li> is one bullet point. Add or remove lines. -->
+      <ul>
+        <li>Git and GitHub</li>
+        <li>Building websites with HTML and CSS</li>
+        <li>Coming soon: Python and data</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <!-- ✏️ Copy a whole <div class="card"> ... </div> block to add another project.
+           Replace YOUR-USERNAME with your GitHub username. -->
+      <div class="card">
+        <h3><a href="https://github.com/YOUR-USERNAME/my-first-repo">My first repository</a></h3>
+        <p>Where I made my first commit with Git.</p>
+      </div>
+      <div class="card">
+        <h3>This website</h3>
+        <p>Built with HTML and CSS and published with GitHub Pages.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with HTML · Member of the <a href="https://valleyaiclub.org/">Valley AI Club</a></p>
+    </footer>
+
+  </main>
+</body>
+</html>
