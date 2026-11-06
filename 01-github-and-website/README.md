@@ -1,11 +1,12 @@
 # Workshop 1: GitHub & your personal website
 
-**Fri, Nov 6, 2026 · 4–6 PM · CSUN campus** · Instructor: Hua
+**Fri, Nov 6, 2026 · 4–6 PM · CSUN campus** · Instructor: Hua Zhou
 
 | Time | What |
-|------|------|
-| First hour | **[Part 1: GitHub](github.md)**: make an account, create a repository, make your first commit, and clone this repository |
-| Office hours | **[Part 2: Your website](website.md)**: publish your own page at `https://YOUR-USERNAME.github.io` |
+|-----------------------------|------------------------------------|
+| 4:30-5:00 | [Part 1: Git](git.md): history, why Git and GitHub |
+| 5:00-5:30 | [Part 2: GitHub](github.md): make an account, create a repository, make your first commit, and clone this repository |
+| 5:30-6:00 (Office hours) | [Part 3: Your website](website.md): publish your own page at `https://YOUR-USERNAME.github.io` |
 
 Everything works in a web browser, including on Chromebooks.
 
@@ -20,7 +21,7 @@ Everything works in a web browser, including on Chromebooks.
 ## Files in this folder
 
 | File | What it's for |
-|------|---------------|
+|---------------------|---------------------------------------------------|
 | [`github.md`](github.md) | Part 1 lesson |
 | [`website.md`](website.md) | Part 2 lesson |
 | [`about-me-README.md`](about-me-README.md) | A template for your first README |
