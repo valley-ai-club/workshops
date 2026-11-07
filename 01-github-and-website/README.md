@@ -22,6 +22,7 @@ Everything works in a web browser, including on Chromebooks.
 
 | File | What it's for |
 |---------------------|---------------------------------------------------|
+| [`club-intro-slides.pdf`](club-intro-slides.pdf) | Opening slides: who we are, why an AI club, what's next ([live version](https://claude.ai/artifact/X7oagborpMmfWsx8VDB3u6)). AlphaFold image: Google DeepMind |
 | [`git.md`](git.md) | Part 1 lesson |
 | [`github.md`](github.md) | Part 2 lesson |
 | [`website.md`](website.md) | Part 3 lesson |
