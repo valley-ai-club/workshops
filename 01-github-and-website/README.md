@@ -22,7 +22,7 @@ Everything works in a web browser, including on Chromebooks.
 
 | File | What it's for |
 |---------------------|---------------------------------------------------|
-| [git.md](git.md) | Part 1 lesson |
+| [`git.md`](git.md) | Part 1 lesson |
 | [`github.md`](github.md) | Part 2 lesson |
 | [`website.md`](website.md) | Part 3 lesson |
 | [`about-me-README.md`](about-me-README.md) | A template for your first README |
