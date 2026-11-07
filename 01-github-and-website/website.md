@@ -1,6 +1,6 @@
 # Your website
 
-[Workshop 1](README.md) · Office hours, right after [Part 1: GitHub](github.md)
+[Workshop 1](README.md) · Office hours, right after [Part 2: GitHub](github.md)
 
 Put your own page on the web, for free, with **GitHub Pages**.
 Your website's address will be:
@@ -15,7 +15,7 @@ By the end you will have:
 - [ ] a live website at that address
 - [ ] a page that's really yours: your words, your colors, your projects
 
-Like Part 1, everything here works in a web browser.
+Like Part 2, everything here works in a web browser.
 
 ## Part 1: Create your website repository
 
