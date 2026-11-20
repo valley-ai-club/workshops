@@ -11,7 +11,7 @@ No coding experience is needed.
 | # | Workshop | |
 |---|----------|---|
 | 1 | [Git and GitHub](01-github-and-website/) | Fri, Nov 6 |
-| 2 | [Build GitHub Profile and personal website](02-profile-and-website/) | Fri, Nov 20 |
+| 2 | [GitHub Profile and personal website](02-profile-and-website/) | Fri, Nov 20 |
 | 3 | Python, R & datasets | Coming soon |
 | 4 | Data wrangling | Coming soon |
 | 5 | Statistics & charts | Coming soon |

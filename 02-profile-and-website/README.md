@@ -1,4 +1,4 @@
-# Workshop 1, continued: Your GitHub profile & personal website
+# Workshop 2: Your GitHub profile & personal website
 
 **Fri, Nov 20, 2026 · SF Valley AI Club** · Instructor: Hua Zhou
 
