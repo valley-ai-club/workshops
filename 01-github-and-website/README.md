@@ -1,9 +1,9 @@
-# Workshop 1: GitHub & your personal website
+# Workshop 1: Git & GitHub
 
 **Fri, Nov 6, 2026 · 4–6 PM · CSUN campus** · Instructor: Hua Zhou
 
 | Time | What |
-|-----------------------------|------------------------------------|
+|--------------------------------|----------------------------------------|
 | 4:30-5:00 | [Part 1: Git](git.md): history, why Git and GitHub |
 | 5:00-5:30 | [Part 2: GitHub](github.md): make an account, create a repository, make your first commit, and clone this repository |
 | 5:30-6:00 (Office hours) | [Part 3: Your website](website.md): publish your own page at `https://YOUR-USERNAME.github.io` |
@@ -21,7 +21,7 @@ Everything works in a web browser, including on Chromebooks.
 ## Files in this folder
 
 | File | What it's for |
-|---------------------|---------------------------------------------------|
+|----------------------|--------------------------------------------------|
 | [`club-intro-slides.pdf`](club-intro-slides.pdf) | Opening slides: who we are, why an AI club, what's next ([live version](https://claude.ai/artifact/X7oagborpMmfWsx8VDB3u6)). AlphaFold image: Google DeepMind |
 | [`git.md`](git.md) | Part 1 lesson |
 | [`github.md`](github.md) | Part 2 lesson |
