@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub profile &amp; portfolio | SF Valley AI Club student lab</title>
+<style>
+:root { --forest:#163f35; --green:#cde9a3; --paper:#faf9f3; --line:#c6d0c3; --ink:#20362e; }
+* { box-sizing:border-box; }
+html { scroll-padding-top:1rem; }
+body { margin:0; color:var(--ink); background:var(--paper); font:1rem/1.6 "DM Sans",system-ui,sans-serif; }
+header { color:white; background:var(--forest); }
+.wrap { width:min(100% - 2rem,55rem); margin:auto; }
+header .wrap { padding:2.7rem 0 2.2rem; }
+header p { margin:0 0 .6rem; }
+h1,h2,h3 { font-family:"Baskervville",Georgia,serif; font-weight:500; line-height:1.14; }
+h1 { font-size:clamp(2.6rem,7vw,4.7rem); margin:0 0 1rem; color:var(--green); letter-spacing:-.04em; }
+h2 { font-size:clamp(1.75rem,4vw,2.6rem); margin:0 0 1rem; letter-spacing:-.035em; }
+h3 { font-size:1.45rem; margin:1.5rem 0 .45rem; }
+p { margin:.55rem 0; }
+nav { display:flex; flex-wrap:wrap; gap:.6rem 1.5rem; }
+a { color:#1b5d4b; text-underline-offset:.2em; }
+header a { color:white; }
+section { padding:2rem 0; border-bottom:1px solid var(--line); }
+ol,ul { padding-left:1.4rem; }
+li { margin:.4rem 0; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(16rem,100%),1fr)); gap:1rem; }
+fieldset { margin:0; min-width:0; border:1px solid var(--line); border-radius:.6rem; padding:1rem; }
+.field { display:block; margin:.45rem 0; font-weight:650; }
+input[type=text],input[type=url] { display:block; width:100%; margin:.15rem 0 .6rem; padding:.55rem; font:inherit; border:1px solid #82958a; border-radius:.25rem; }
+legend { padding:0 .4rem; font-weight:650; }
+.choice { display:block; margin:.7rem 0; }
+pre { padding:1rem; overflow:auto; max-height:27rem; margin:.7rem 0; color:#eaf3e3; background:#1c332b; border-radius:.5rem; white-space:pre-wrap; overflow-wrap:anywhere; font-size:.88rem; line-height:1.55; }
+code { font-family:"IBM Plex Mono",ui-monospace,monospace; overflow-wrap:anywhere; }
+button,.action { display:inline-block; font:inherit; font-weight:650; text-decoration:none; cursor:pointer; padding:.45rem .9rem; border:1px solid #688473; border-radius:.38rem; background:white; color:#144937; }
+.action.primary { background:var(--forest); color:white; }
+.actions { display:flex; flex-wrap:wrap; gap:.55rem; margin:.75rem 0; }
+:focus-visible { outline:3px solid #977122; outline-offset:3px; }
+.tip { border-left:4px solid #759b4c; padding:.35rem 1rem; background:#edf3e6; margin:1rem 0; }
+summary { cursor:pointer; font-weight:650; }
+details { margin:.75rem 0; }
+table { border-collapse:collapse; width:100%; }
+th,td { padding:.5rem .35rem; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; overflow-wrap:anywhere; }
+[hidden] { display:none !important; }
+footer { padding:1.5rem 0; }
+.g-panel { border-left:3px solid var(--line); margin:.85rem 0; padding:0 1rem; }
+.g-panel select { display:block; max-width:100%; margin:.35rem 0; padding:.4rem; font:inherit; color:inherit; }
+.tool-preview { display:flex; gap:.35rem; align-items:center; flex-wrap:wrap; padding:.4rem 0; }
+.banner-sample { display:block; width:100%; max-width:840px; height:auto; margin:1rem 0; }
+button:disabled { opacity:.55; cursor:default; }
+#feedback { position:fixed; bottom:.8rem; right:.8rem; margin:0; max-width:min(90vw,26rem); color:white; background:var(--forest); border-radius:.35rem; }
+#feedback:not(:empty) { padding:.5rem .85rem; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<p>SF Valley AI Club · Student lab</p>
+<h1>Your work on GitHub</h1>
+<p>Publish a profile and a personal website. Give visitors one project they can open and one result they can check.</p>
+<nav aria-label="Lab sections"><a href="#setup">Set up</a><a href="#profile">Build your profile</a><a href="#website">Publish your website</a><a href="#test">Test with a partner</a></nav>
+</div></header>
+<main class="wrap">
+<section id="setup">
+<h2>Before you start</h2>
+<p>Open this downloaded handout in your browser and sign in to GitHub in another tab. The fields below personalize the starter text on this page. Use your first name or a nickname. Keep your school, schedule and personal contact details private. If you are under 13 or can’t sign in, design locally and pair with a mentor for the GitHub demonstration.</p>
+<div class="grid">
+<fieldset><legend>Your details</legend>
+<label class="field">GitHub username <input id="handle" type="text" autocomplete="off" placeholder="Your GitHub handle, without @"></label>
+<label class="field">First name or nickname <input id="nickname" type="text" maxlength="50" placeholder="Name to display"></label></fieldset>
+<fieldset><legend>Which project will you feature?</legend>
+<label class="choice"><input type="radio" name="path" value="paper" checked> Use the club’s paper-plane data</label>
+<label class="choice"><input type="radio" name="path" value="own"> Bring my own project</label>
+<div id="own-fields" hidden><label class="field">Public link to your project <input type="url" id="project-url" placeholder="https://…"></label>
+<label class="field">Project title <input type="text" id="project-title" maxlength="90"></label></div></fieldset></div>
+<p id="setup-status" aria-live="polite"></p>
+<p class="tip">Work only in repositories you own. If a repository already exists, open it and keep the work you want. A mentor can demonstrate on their own account while you edit your local copy.</p>
+</section>
+
+<section id="profile">
+<h2>Tutorial 1 · Build your GitHub profile</h2>
+<h3>Make the commit we missed last time</h3>
+<ol>
+<li>On GitHub choose <strong>+ → New repository</strong>. Name it <code>my-first-repo</code>, choose <strong>Public</strong>, turn on <strong>Add README</strong>, and create it. If you already have it, edit its README.</li>
+<li>Open <code>README.md</code> and choose the pencil. Open <a href="https://github.com/valley-ai-club/workshops/blob/main/01-github-and-website/about-me-README.md">last time’s About Me template</a> in a new tab and use <strong>Raw</strong> to copy the Markdown, or use the short starter below. Fill in the answers in your own words and remove optional details.</li>
+<li>Choose <strong>Preview</strong>. Check the heading, list and link. Choose <strong>Commit changes</strong>, enter <code>Add my About Me introduction</code>, and confirm. Back on the file list, open <strong>Commits</strong>, then your commit. Show a partner one line you added.</li>
+</ol>
+<details><summary>Short About Me starter</summary><pre id="about-code"></pre><button data-copy="about-code">Copy About Me starter</button></details>
+
+<h3>Give people a project they can inspect</h3>
+<div id="paper-instructions">
+<p>Which plane wins if you care about a typical flight? What if you care about the single longest flight? The club made up these ten distances for practice. Both rows are in increasing order.</p>
+<table><thead><tr><th>Design</th><th>Five flight distances (meters)</th></tr></thead><tbody><tr><td>Dart</td><td>3, 4, 4, 5, 9</td></tr><tr><td>Glider</td><td>4, 5, 6, 6, 7</td></tr></tbody></table>
+<p>Pick out the middle number in each row to get the median. In <code>my-first-repo</code>, choose <strong>Add file → Create new file</strong> and name it <code>flight-log.md</code>. Paste the log, replace every blank with your own answers, preview it, and commit with <code>Compare median paper-plane flights</code>. If your default branch has a different name from <code>main</code>, copy the URL of your saved file into the profile and website.</p>
+<details><summary>Get the flight log</summary><pre id="log-code"></pre><button data-copy="log-code">Copy flight log</button></details></div>
+<div id="own-instructions" hidden><p>Open a public artifact you can share, such as a notebook, science fair chart, Scratch project, robotics program or website. Copy that exact link into the project field above. Add three lines to <code>my-first-repo/README.md</code> and commit them: the question, your individual contribution (credit teammates), and one result a visitor can verify. Link to the artifact. If the original is private, describe your work using a shareable example you own.</p></div>
+
+<h3>Put your technical background on your profile</h3>
+<ol>
+<li>Go to your avatar → <strong>Your profile → Edit profile</strong>. Add a one-line bio: what you do and what you are learning. Example: “Student comparing small datasets and learning how to publish them on the web.” An avatar is optional.</li>
+<li>Create a <strong>second public repository</strong> named <strong>exactly your GitHub username</strong>. Turn on <strong>Add README</strong>. At the top level, edit <code>README.md</code>. If you already have a profile README, add just the sections you need.</li>
+<li>Choose your gadgets below, then copy the full README starter. Connect each tool to something you did, identify your part in each project, and distinguish skills you have practiced from what you plan to learn. Replace bracketed prompts. Leave the portfolio link until after your site is live.</li>
+<li>Preview, commit, and visit <code>github.com/YOUR-USERNAME</code>. Under <strong>Popular repositories</strong> or <strong>Pinned</strong>, choose <strong>Customize your pins</strong>, select <code>my-first-repo</code> or your strongest public repository, and save. In that repository’s <strong>About</strong> section, add a short description using the gear icon.</li>
+</ol>
+<div id="gadgets">
+<h3>Choose your profile gadgets</h3>
+<p>Look at <a href="https://github.com/Hua-Zhou" target="_blank" rel="noopener">Hua’s toolbox and GitHub stats</a>. Now make a visitor click through to something you did. Start with the toolbox and the project challenge. You can add the other two in office hours.</p>
+<fieldset><legend>Include in my README</legend>
+<label class="choice"><input id="g-tools" type="checkbox" checked> <strong>Clickable toolbox.</strong> Git opens your commit history. Markdown opens the README you wrote.</label>
+<label class="choice"><input id="g-quiz" type="checkbox" checked> <strong>Guess the result.</strong> Invite a visitor to predict your finding, then click to reveal the answer and evidence.</label>
+<label class="choice"><input id="g-activity" type="checkbox"> <strong>Last commit.</strong> Show when you last changed <code>my-first-repo</code>. The badge links to the actual changes.</label>
+<label class="choice"><input id="g-banner" type="checkbox"> <strong>Animated name banner.</strong> Create a header with your nickname, a line about your interests and an orbiting dot.</label>
+</fieldset>
+<div id="tool-options" class="g-panel">
+<div class="tool-preview" aria-label="Preview of linked toolbox badges">
+<a id="preview-git"><img alt="Git commits" height="28" src="https://img.shields.io/badge/Git-commits-185a48?style=for-the-badge&amp;logo=git&amp;logoColor=white"></a>
+<a id="preview-markdown"><img alt="Markdown README" height="28" src="https://img.shields.io/badge/Markdown-README-40516c?style=for-the-badge&amp;logo=markdown&amp;logoColor=white"></a>
+<a id="preview-extra" hidden><img id="extra-image" alt="Additional tool badge" height="28"></a>
+</div>
+<label>Optional third toolbox badge
+<select id="extra-tool"><option value="">Git and Markdown only</option><option>Python</option><option>R</option><option>Julia</option><option>Scratch</option><option>JavaScript</option></select></label>
+<p>Choose a third tool only if you have an example that uses it. Its badge links to your featured project. You can change that link in the Markdown.</p>
+</div>
+<div id="quiz-options" class="g-panel">
+<p id="quiz-prompt"></p><details><summary>Reveal my answer</summary><p id="quiz-demo"></p></details>
+<div id="quiz-custom" hidden><label class="field">Your prediction question <input type="text" id="quiz-question" maxlength="130" placeholder="Which change made my robot follow the line more reliably?"></label>
+<label class="field">Your answer and evidence <input type="text" id="quiz-answer" maxlength="220" placeholder="Name your change and one result you measured."></label></div>
+</div>
+<div id="activity-options" class="g-panel" hidden>
+<p><a id="live-badge" target="_blank" rel="noopener">Preview the live badge for my repository</a>. Your repository must be public. The badge can lag behind a recent commit. The accompanying history link works even if the badge service is slow.</p>
+</div>
+<div id="banner-options" class="g-panel" hidden>
+<label class="field">Banner subtitle <input id="banner-line" type="text" maxlength="56" placeholder="Learning Git and Markdown"></label>
+<label>Color palette <select id="banner-palette"><option value="orbit">Midnight mint</option><option value="plum">Plum and apricot</option></select></label>
+<img id="banner-sample" class="banner-sample" alt="Preview of your personalized profile banner">
+<a class="action" id="download-banner" download="profile-banner.svg">Download profile-banner.svg</a>
+<p>In your <strong>username profile repository</strong>, choose <strong>Add file → Upload files</strong> and commit <code>profile-banner.svg</code> beside <code>README.md</code>. The generated Markdown links to that filename. To update your banner later, download it again and replace the old image.</p>
+</div>
+<p>The full README starter below already includes your selections. If you have an existing profile, copy only the gadget Markdown, paste it into <code>README.md</code>, and choose <strong>Preview → Commit changes</strong>. Then visit your profile and try each gadget.</p>
+<details><summary>Markdown for selected gadgets only</summary><pre id="gadgets-code"></pre><button id="copy-gadgets" data-copy="gadgets-code">Copy selected gadgets</button></details>
+</div>
+<details open><summary>Your profile README starter</summary><pre id="profile-code"></pre><button data-copy="profile-code">Copy profile README</button></details>
+<p class="tip"><strong>Checkpoint.</strong> Open your profile in a new tab. Can a partner identify a tool you used and open the exact file, demo or notebook that shows what you did?</p>
+</section>
+
+<section id="website">
+<h2>Tutorial 2 · Publish a personal website</h2>
+<p>The starter is one editable HTML file. It includes a responsive project layout, jump links, a color palette and a panel that opens on click. Preview the sample, then make it yours.</p>
+<div class="actions"><a class="action" id="preview" target="_blank" rel="noopener">Preview my starter in a new tab</a><a class="action primary" id="download" download="index.html">Download index.html</a></div>
+<details><summary>View or copy the HTML source</summary><pre id="site-code"></pre><button data-copy="site-code">Copy website HTML</button></details>
+<h3>Get the first version online</h3>
+<ol>
+<li><strong>First Pages site?</strong> Create the public repository <code id="repo-name">YOUR-USERNAME.github.io</code> and turn on <strong>Add README</strong> so the branch exists. Use lowercase for the website repository name. Download <code>index.html</code> above. Use <strong>Add file → Upload files</strong>, select that single file, and commit it to <code>main</code>. It belongs at the top level of the repository.</li>
+<li><strong>Already have a site from November 6?</strong> Keep your current homepage. Use <strong>Add file → Create new file</strong> to add <code>portfolio.html</code> on the same branch and paste in the starter source. Add a link to it in your existing <code>index.html</code>, for example <code>&lt;a href="portfolio.html"&gt;My portfolio&lt;/a&gt;</code>. Your new design will live at <code>/portfolio.html</code>.</li>
+<li>Inside the site repository, go to <strong>Settings → Pages → Build and deployment</strong>. For a new site, select <strong>Deploy from a branch → main → / (root) → Save</strong>. If your existing site already deploys successfully, keep its settings and use its publishing folder. Open <strong>Actions</strong> to follow the deployment.</li>
+</ol>
+<h3>Change what visitors see</h3>
+<ol>
+<li>On GitHub, open your HTML file and click the pencil. Find <code>EDIT 3</code>. Write a one-sentence introduction only you would write. Under <code>EDIT 4</code>, give your project a question, your approach, and a result in plain English. Check the result against the artifact before publishing.</li>
+<li>Near <code>EDIT 2</code>, change <code>--accent</code> from <code>#164e43</code> to <code>#49213e</code> and <code>--highlight</code> from <code>#cfed9d</code> to <code>#f2cbea</code>, or choose your own readable pair. These values control multiple places on the page. In <code>EDIT 5</code>, write what you learned and what you would try next.</li>
+<li>Commit with a message that says what changed. Under <strong>Settings → Pages → Visit site</strong>, open your site (or its <code>/portfolio.html</code> page). Publishing can take up to ten minutes. While it builds, reopen your profile README and add <code>[My portfolio](YOUR-LIVE-URL)</code>. Paste the same live URL into <strong>Edit profile → Website</strong>.</li>
+</ol>
+<p class="tip"><strong>Checkpoint.</strong> From the live site, click the project evidence and GitHub links. Narrow the window until the two columns stack. Press Tab, then Enter to open a link or expand the project detail.</p>
+</section>
+
+<section id="test">
+<h2>The 30-second visitor test</h2>
+<p>Swap links. Imagine you are choosing a teammate for the next club project. Start on their GitHub profile. Within 30 seconds, open their site, find a specific technical skill, and point to the file or demo that shows it. Tell them one sentence they should keep and one thing you had to hunt for. Switch roles. Fix one issue and commit.</p>
+<details><summary>If something looks wrong</summary>
+<table><thead><tr><th>Symptom</th><th>First check</th></tr></thead><tbody>
+<tr><td>No profile README</td><td>The profile repo is public, matches the username and has a nonempty <code>README.md</code> in its root.</td></tr>
+<tr><td>A profile gadget looks broken</td><td>The banner file and profile README must be side by side with matching filenames. For a badge, check the username and public repository. Use the history link while the image refreshes.</td></tr>
+<tr><td>Website gives a 404</td><td>Use the URL in Settings → Pages. Check the publishing branch, folder and lowercase filename. Check the latest Pages run in Actions. For an existing site, include <code>/portfolio.html</code>.</td></tr>
+<tr><td>The old design appears</td><td>Confirm the commit is on the published branch. Wait for deployment to finish and hard-refresh (Ctrl/Cmd + Shift + R).</td></tr>
+<tr><td>The evidence link fails</td><td>Open the public artifact on GitHub, copy its real address, and correct the link on both pages. Test in a signed-out window.</td></tr>
+</tbody></table></details>
+<details><summary>Office-hours challenges</summary><ul>
+<li><strong>10 minutes.</strong> Add a second project or course activity you have done. Describe your role and link to the result. Ask someone outside your group what they think you built.</li>
+<li><strong>15 minutes.</strong> Add a screenshot or plot you made and can share. Upload it beside your HTML file. Add <code>&lt;img src="result.png" alt="Describe the result" style="max-width:100%;height:auto"&gt;</code>. Write an alt description that tells a reader what the image shows.</li>
+<li><strong>20 minutes.</strong> Add <code>projects.html</code> with a longer case study. Link it from your home page and include a return link. If this was a team project, credit your teammates and identify your contribution.</li>
+</ul></details>
+</section>
+</main>
+<footer class="wrap"><strong>Workshop references</strong><p><a href="https://github.com/valley-ai-club/workshops/tree/main/01-github-and-website">November 6 workshop</a> · <a href="https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme">Profile README</a> · <a href="https://docs.github.com/en/account-and-profile/how-tos/profile-customization/pinning-items-to-your-profile">Pinning repositories</a> · <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">Pages publishing settings</a></p></footer>
+<noscript><p class="wrap">Open the downloaded handout in a browser with JavaScript enabled to personalize, copy and preview the starters.</p></noscript>
+<p id="feedback" role="status"></p>
+<script id="templates" type="application/json">{"site": "\u003c!doctype html>\n\u003chtml lang=\"en\">\n\u003chead>\n  \u003cmeta charset=\"utf-8\">\n  \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  \u003c!-- EDIT 1: Give your browser tab a title. -->\n  \u003ctitle>@@NAME@@ | Student portfolio\u003c/title>\n  \u003cstyle>\n    :root {\n      /* EDIT 2: Try plum with #49213e and #f2cbea instead. */\n      --ink: #162c26;\n      --accent: #164e43;\n      --highlight: #cfed9d;\n      --paper: #f8f7ef;\n      --line: #c0cbbd;\n    }\n    * { box-sizing: border-box; }\n    body {\n      margin: 0;\n      background: var(--paper);\n      color: var(--ink);\n      font: 1.05rem/1.6 \"DM Sans\", system-ui, sans-serif;\n    }\n    .wrap { width: min(100% - 2.5rem, 66rem); margin-inline: auto; }\n    h1, h2, h3, p, figure { margin: 0; }\n    h1, h2, h3 { font-family: \"Baskervville\", Georgia, serif; font-weight: 500; line-height: 1.08; }\n    h1 { font-size: clamp(3.4rem, 9vw, 7.4rem); letter-spacing: -.05em; overflow-wrap: anywhere; }\n    h2 { font-size: clamp(2rem, 5vw, 3.8rem); letter-spacing: -.04em; }\n    h3 { font-size: 1.7rem; }\n    a { color: inherit; text-underline-offset: .23em; }\n    a:hover, summary:hover { text-decoration-thickness: .16em; }\n    :focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }\n    header { background: var(--accent); color: white; }\n    nav, .nav-links, footer { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }\n    nav, footer { justify-content: space-between; padding-block: 1.1rem; }\n    nav { border-bottom: 1px solid #ffffff4d; }\n    .hero { padding-block: clamp(2.8rem, 7vw, 5rem); }\n    .hero h1 { color: var(--highlight); }\n    .hero p { max-width: 42rem; margin-block: 1rem 1.6rem; font-size: clamp(1.1rem, 3vw, 1.55rem); }\n    .button { display: inline-block; padding: .55rem 1rem; background: var(--highlight); color: #15281d; border-radius: 2rem; font-weight: 650; }\n    .button:focus-visible { outline-color: white; }\n    .feature { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(1.5rem, 5vw, 4rem); padding-block: 3rem; }\n    .feature h3, .feature p, .note p { margin-top: .8rem; }\n    .feature a { display: inline-block; margin-top: 1rem; font-weight: 650; }\n    .note { padding: clamp(1.2rem, 4vw, 2rem); border: 1px solid var(--line); border-radius: 1rem; background: #fff; }\n    .note h3 { margin-top: 0; }\n    .bar { height: .75rem; background: #e0e8df; border-radius: 1rem; overflow: hidden; }\n    .bar span { display: block; height: 100%; background: var(--accent); }\n    .measure { display: flex; justify-content: space-between; margin-top: .85rem; }\n    figcaption { margin-top: .8rem; font-size: .9rem; }\n    details { margin-top: .8rem; }\n    summary { cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }\n    .about { padding-block: 2rem; border-block: 1px solid var(--line); }\n    .about p { margin-top: .65rem; max-width: 60ch; }\n    footer { font-size: .95rem; }\n    @media (max-width: 42rem) {\n      .feature { grid-template-columns: 1fr; padding-block: 2rem; }\n      .nav-links { gap: .85rem; }\n    }\n  \u003c/style>\n\u003c/head>\n\u003cbody>\n  \u003cheader id=\"top\">\n    \u003cdiv class=\"wrap\">\n      \u003cnav aria-label=\"Main\">\n        \u003cstrong>@@NAME@@’s portfolio\u003c/strong>\n        \u003cdiv class=\"nav-links\">\u003ca href=\"#work\">Work\u003c/a>\u003ca href=\"#about\">About\u003c/a>\u003ca href=\"https://github.com/@@USER@@\">GitHub\u003c/a>\u003c/div>\n      \u003c/nav>\n      \u003cdiv class=\"hero\">\n        \u003c!-- EDIT 3: Introduce yourself in your own words. -->\n        \u003ch1>Hi, I’m @@NAME@@.\u003c/h1>\n        \u003cp>@@INTRO@@\u003c/p>\n        \u003ca class=\"button\" href=\"#work\">Explore my project ↓\u003c/a>\n      \u003c/div>\n    \u003c/div>\n  \u003c/header>\n\n  \u003cmain class=\"wrap\">\n    \u003c!-- EDIT 4: Tell the reader what you did and link to the actual work. -->\n    \u003csection class=\"feature\" id=\"work\" aria-labelledby=\"work-title\">\n      \u003cdiv>\n        \u003ch2 id=\"work-title\">Featured work\u003c/h2>\n        @@FEATURE@@\n      \u003c/div>\n      @@NOTE@@\n    \u003c/section>\n\n    \u003csection class=\"about\" id=\"about\">\n      \u003ch2>What I’m learning\u003c/h2>\n      \u003c!-- EDIT 5: Name one skill you practiced and one specific next step. -->\n      \u003cp>@@LEARNING@@\u003c/p>\n    \u003c/section>\n  \u003c/main>\n  \u003cfooter class=\"wrap\">\n    \u003ca href=\"https://github.com/@@USER@@\">Find my work on GitHub\u003c/a>\n    \u003ca href=\"#top\">Back to top ↑\u003c/a>\n  \u003c/footer>\n\u003c/body>\n\u003c/html>\n", "log": "# Paper-plane flight log\n\nQuestion: Which design flies farther in these fictional workshop data?\n\n| Design | Five distances (m), sorted | Median (m) | Longest (m) |\n| --- | --- | --- | --- |\n| Dart | 3, 4, 4, 5, 9 | ___ | ___ |\n| Glider | 4, 5, 6, 6, 7 | ___ | ___ |\n\nMy finding: [Which wins for a typical flight? Which wins for a record? Cite two numbers.]\n\nMy method: [How did you find the middle flight?]\n\nOne thing I would test next: [Your idea and why.]", "paper": {"feature": "\u003ch3>Which paper plane flies farther?\u003c/h3>\n        \u003cp>I compared five example flights per design. The dart had the longest single flight, but the glider had the longer median. The answer depends on what “farther” means.\u003c/p>\n        \u003ca href=\"https://github.com/@@USER@@/my-first-repo/blob/main/flight-log.md\">Read my flight log →\u003c/a>", "note": "\u003cfigure class=\"note\">\n        \u003ch3>Median flight distance\u003c/h3>\n        \u003cdiv class=\"measure\">\u003cspan>Dart\u003c/span>\u003cstrong>4 m\u003c/strong>\u003c/div>\n        \u003cdiv class=\"bar\" aria-hidden=\"true\">\u003cspan style=\"width: 40%\">\u003c/span>\u003c/div>\n        \u003cdiv class=\"measure\">\u003cspan>Glider\u003c/span>\u003cstrong>6 m\u003c/strong>\u003c/div>\n        \u003cdiv class=\"bar\" aria-hidden=\"true\">\u003cspan style=\"width: 60%\">\u003c/span>\u003c/div>\n        \u003cfigcaption>Shared scale from 0 to 10 meters. Fictional workshop data.\u003c/figcaption>\n        \u003cdetails>\u003csummary>See all ten distances\u003c/summary>\n          \u003cp>Dart (m): 3, 4, 4, 5, 9.\u003cbr>Glider (m): 4, 5, 6, 6, 7.\u003c/p>\n        \u003c/details>\n      \u003c/figure>", "intro": "I like questions I can test with a small dataset and a pencil.", "learning": "I practiced organizing results in Markdown. Next I want to plot all ten flights so readers can see how the distances vary.", "profile": "I compared [number] fictional flights and used [method]. I found [your result in one sentence]."}, "own": {"feature": "\u003ch3>@@TITLE@@\u003c/h3>\n        \u003cp>Describe the question or problem. Explain what you personally made, tested, or changed. End with one result a visitor can check.\u003c/p>\n        \u003ca href=\"@@PROJECT_URL@@\">Explore the project →\u003c/a>", "note": "\u003caside class=\"note\">\n        \u003ch3>Behind the build\u003c/h3>\n        \u003cp>Name one tool you used. Explain a choice you made and how you checked whether it worked.\u003c/p>\n        \u003cdetails>\u003csummary>What I would try next\u003c/summary>\n          \u003cp>Describe one change you would test if you had another afternoon.\u003c/p>\n        \u003c/details>\n      \u003c/aside>", "intro": "I’m a student who likes building things and figuring out how they work.", "learning": "Name one tool you practiced and describe what you would like to make with it next.", "profile": "I used [tool] to [what you personally did]. The result was [something a visitor can verify]."}}</script>
+<script>const data = JSON.parse(document.getElementById('templates').textContent);
+const get = id => document.getElementById(id);
+let previewUrl;
+
+function escapeHtml(value) {
+  return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+}
+
+function publicProjectUrl(value) {
+  try {
+    const url = new URL(value);
+    return ['https:', 'http:'].includes(url.protocol) ? url.href : 'PROJECT-URL';
+  } catch {
+    return 'PROJECT-URL';
+  }
+}
+
+let bannerUrl;
+
+function makeBanner(name, subtitle, plum) {
+  const base = plum ? '#311d39' : '#102b32';
+  const bright = plum ? '#ffd293' : '#b7f6cd';
+  const orbit = plum ? '#c68ec5' : '#69a8aa';
+  const nameSize = Math.min(54, 535 / Math.max(1, Array.from(name).length));
+  const subSize = Math.min(21, 535 / Math.max(1, Array.from(subtitle).length));
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="840" height="180" viewBox="0 0 840 180" role="img" aria-labelledby="title desc">
+  <title id="title">${escapeHtml(name)}</title><desc id="desc">${escapeHtml(subtitle)}</desc>
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      .satellite { transform-origin: 714px 89px; animation: orbit 12s linear infinite; }
+    }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+  </style>
+  <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="${orbit}" opacity=".34"/></pattern></defs>
+  <rect width="840" height="180" rx="14" fill="${base}"/>
+  <rect x="595" width="245" height="180" rx="14" fill="url(#dots)"/>
+  <g fill="none" stroke="${orbit}">
+    <circle cx="714" cy="89" r="56"/><circle cx="714" cy="89" r="74" stroke-dasharray="2 8"/>
+    <ellipse cx="714" cy="89" rx="97" ry="30" transform="rotate(-22 714 89)"/>
+  </g>
+  <circle cx="714" cy="89" r="21" fill="${bright}"/>
+  <circle class="satellite" cx="714" cy="33" r="6" fill="#fff"/>
+  <rect x="38" y="34" width="45" height="4" rx="2" fill="${bright}"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="36" y="99" font-size="${nameSize}" font-weight="700" fill="${bright}">${escapeHtml(name)}</text>
+    <text x="38" y="140" font-size="${subSize}" fill="#f5f7f2">${escapeHtml(subtitle)}</text>
+  </g>
+</svg>`;
+}
+
+function mdText(value) {
+  // Student text must stay text, including when it contains angle brackets.
+  return escapeHtml(value).replace(/[\\`*_\[\]~]/g, '\\$&');
+}
+
+function makeGadgets(user, name, own, evidence) {
+  const repo = 'https://github.com/' + user + '/my-first-repo';
+  const history = repo + '/commits';
+  const badges = 'https://img.shields.io/';
+  const sections = [];
+  let banner = '';
+  const useTools = get('g-tools').checked;
+  const useQuiz = get('g-quiz').checked;
+  const useActivity = get('g-activity').checked;
+  const useBanner = get('g-banner').checked;
+  get('tool-options').hidden = !useTools;
+  get('quiz-options').hidden = !useQuiz;
+  get('quiz-custom').hidden = !own;
+  get('activity-options').hidden = !useActivity;
+  get('banner-options').hidden = !useBanner;
+
+  if (useTools) {
+    const style = '?style=for-the-badge&logo=';
+    const toolbox = [
+      '[![Git commit history](' + badges + 'badge/Git-commits-185a48' + style + 'git&logoColor=white)](' + history + ')',
+      '[![Markdown project README](' + badges + 'badge/Markdown-README-40516c' + style + 'markdown&logoColor=white)](' + repo + '#readme)'
+    ];
+    get('preview-git').href = history;
+    get('preview-markdown').href = repo + '#readme';
+    const tool = get('extra-tool').value;
+    get('preview-extra').hidden = !tool;
+    if (tool) {
+      get('preview-extra').href = evidence;
+      get('extra-image').alt = tool + ' project';
+      get('extra-image').src = badges + 'badge/' + encodeURIComponent(tool) + '-project-703d68' + style + tool.toLowerCase() + '&logoColor=white';
+      toolbox.push('[![' + tool + ' project](' + badges + 'badge/' + encodeURIComponent(tool) + '-project-703d68' + style + tool.toLowerCase() + '&logoColor=white)](<' + evidence + '>)');
+    }
+    sections.push('## My toolbox\n\n' + toolbox.join(' '));
+  }
+  if (useQuiz) {
+    const question = own ? get('quiz-question').value.trim() || '[Write a question about your project]' : 'Which paper plane would you choose for a typical flight?';
+    const answer = own ? get('quiz-answer').value.trim() || '[Explain your answer using a result you checked.]' : 'The glider. Its median was 6 m, compared with 4 m for the dart. The dart set the single-flight record at 9 m.';
+    get('quiz-prompt').textContent = question;
+    get('quiz-demo').textContent = answer;
+    sections.push('## Guess the result\n\n' + mdText(question) + '\n\n<details>\n<summary>Reveal my answer</summary>\n\n' + mdText(answer) + '\n\n[Check the evidence](<' + evidence + '>)\n\n</details>');
+  }
+  if (useActivity) {
+    const url = badges + 'github/last-commit/' + user + '/my-first-repo?style=flat-square&logo=github';
+    get('live-badge').href = url;
+    sections.push('[![Last commit to my-first-repo](' + url + ')](' + history + ') · [See commit history](' + history + ')');
+  }
+  if (bannerUrl) { URL.revokeObjectURL(bannerUrl); bannerUrl = undefined; }
+  if (useBanner) {
+    const subtitle = get('banner-line').value.trim() || 'Learning Git and Markdown';
+    const svg = makeBanner(name, subtitle, get('banner-palette').value === 'plum');
+    bannerUrl = URL.createObjectURL(new Blob([svg], {type: 'image/svg+xml;charset=utf-8'}));
+    get('download-banner').href = bannerUrl;
+    get('banner-sample').src = bannerUrl;
+    banner = '![' + mdText(name + ' | ' + subtitle) + '](./profile-banner.svg)';
+  }
+  const rest = sections.join('\n\n');
+  const all = [banner, rest].filter(Boolean).join('\n\n');
+  get('gadgets-code').textContent = all || 'Choose a gadget above to generate its Markdown.';
+  get('copy-gadgets').disabled = !all;
+  return {banner, rest};
+}
+
+function refreshStarters() {
+  const rawHandle = get('handle').value.trim().replace(/^@/, '');
+  const user = /^[a-z\d](?:[a-z\d-]*[a-z\d])?$/i.test(rawHandle) ? rawHandle : 'YOUR-USERNAME';
+  const name = get('nickname').value.trim() || 'YOUR-NICKNAME';
+  const own = document.querySelector('input[name="path"]:checked').value === 'own';
+  const evidence = own ? publicProjectUrl(get('project-url').value.trim())
+                       : 'https://github.com/' + user + '/my-first-repo/blob/main/flight-log.md';
+  const title = own ? get('project-title').value.trim() || 'PROJECT TITLE' : 'Which paper plane flies farther?';
+  const b = own ? data.own : data.paper;
+  get('own-fields').hidden = !own;
+  get('own-instructions').hidden = !own;
+  get('paper-instructions').hidden = own;
+  get('repo-name').textContent = user.toLowerCase() + '.github.io';
+  get('setup-status').textContent = user === 'YOUR-USERNAME' || name === 'YOUR-NICKNAME'
+    ? 'Enter your nickname and GitHub username to replace the starter placeholders.'
+    : own && (evidence === 'PROJECT-URL' || title === 'PROJECT TITLE')
+    ? 'Enter your project title and a full public project URL before publishing.'
+    : 'Your starter links are filled in. Replace the writing prompts before publishing.';
+  get('about-code').textContent = '# Hi, I’m ' + name + '\n\nI’m learning [topic] with the SF Valley AI Club.\n\n## About me\n- I’m interested in [interest].\n- Outside of school, I enjoy [activity].\n- A question I’d like to explore with data is [question].\n\n## This repository\nI’m practicing Markdown and saving changes with Git.';
+  get('log-code').textContent = data.log;
+  // Escape punctuation in the link label; angle brackets delimit the link URL.
+  const label = title.replace(/[\\[\]]/g, '\\$&');
+  const gadgets = makeGadgets(user, name, own, evidence);
+  const intro = gadgets.banner ? gadgets.banner + '\n\n' : '';
+  get('profile-code').textContent = intro + '# Hi, I’m ' + name + '\n\n[One sentence about a technical interest and the kind of project you enjoy.]\n\n## Featured project\n[' + label + '](<' + evidence + '>)\n\n' + b.profile + '\n\n## Tools I’ve used\n- Markdown: I organized a README with headings and links.\n- [Another tool, course or club experience]: [What you personally made or tested. Delete this line if it does not apply.]\n\n## Related experience (optional)\n[Name a class, club, competition, or team project. Say what you personally contributed, credit collaborators, and link an example you can share.]\n\n## What I’m learning next\n[One specific next step and why you want to try it.]';
+
+  if (gadgets.rest) get('profile-code').textContent += '\n\n' + gadgets.rest;
+
+  const substitutions = {
+    '@@NAME@@': escapeHtml(name),
+    '@@USER@@': user,
+    '@@PROJECT_URL@@': escapeHtml(evidence),
+    '@@TITLE@@': escapeHtml(title),
+    '@@INTRO@@': b.intro,
+    '@@LEARNING@@': b.learning
+  };
+  const structure = data.site.replace('@@FEATURE@@', () => b.feature).replace('@@NOTE@@', () => b.note);
+  const html = structure.replace(/@@[A-Z_]+@@/g, key => substitutions[key] ?? key);
+  get('site-code').textContent = html;
+  if (previewUrl) URL.revokeObjectURL(previewUrl);
+  previewUrl = URL.createObjectURL(new Blob([html], {type: 'text/html;charset=utf-8'}));
+  get('preview').href = previewUrl;
+  get('download').href = previewUrl;
+}
+
+let feedbackTimer;
+async function copyBlock(button) {
+  const block = get(button.dataset.copy);
+  try {
+    await navigator.clipboard.writeText(block.textContent);
+    get('feedback').textContent = 'Copied.';
+  } catch {
+    const range = document.createRange();
+    range.selectNodeContents(block);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    get('feedback').textContent = 'Text selected. Press Ctrl+C or Cmd+C to copy.';
+  }
+  clearTimeout(feedbackTimer);
+  feedbackTimer = setTimeout(() => { get('feedback').textContent = ''; }, 4500);
+}
+document.querySelectorAll('#setup input, #gadgets input, #gadgets select').forEach(input => input.addEventListener('input', refreshStarters));
+document.querySelectorAll('[data-copy]').forEach(button => button.addEventListener('click', () => copyBlock(button)));
+refreshStarters();
+</script>
+</body>
+</html>
