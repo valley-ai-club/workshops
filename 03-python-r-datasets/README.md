@@ -1,3 +1,3 @@
-# Workshop 2: Python, R & datasets
+# Workshop 3: Python, R & datasets
 
 Coming soon. Materials will be posted here before the workshop.
